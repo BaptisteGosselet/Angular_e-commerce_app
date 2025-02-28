@@ -1,0 +1,13 @@
+<button type="button" (click)="goToProductDetails()" class="card">
+
+    <div class="card-illustration">
+        <img [src]="product().image" alt="product image" />
+    </div>
+    
+    <div class="card-subtitle">
+        <p class="card-subtitle-title">{{ product().title }}</p>
+        <p class="card-subtitle-price">{{ product().price }}</p>
+    </div>
+        
+</button>
+
