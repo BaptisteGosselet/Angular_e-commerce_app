@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { HomeStore } from './home.store';
+import { Product } from '../../models/product.model';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { HomeStore } from './home.store';
 })
 export class HomeComponent {
   #homeStore:HomeStore = inject(HomeStore);
+
+  products:Signal<Product[]> = this.#homeStore.products();
 
   constructor() {
     this.#homeStore.init();
