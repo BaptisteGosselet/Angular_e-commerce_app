@@ -11,6 +11,7 @@ import { HeaderStore } from './header.store';
 })
 export class HeaderComponent {
   #headerStore = inject(HeaderStore);
-  links = this.#headerStore.links();
+  catalogLinks = this.#headerStore.catalogLinks();
+  userLinks = this.#headerStore.userLinks();
 
 }

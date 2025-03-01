@@ -1,0 +1,16 @@
+
+@if (cart().products.length > 0) {
+    <p class="title">Panier</p>
+    <p class="title">{{ total() }}</p>
+    @for (product of cart().products; track product.id) {
+        <div class="cart-product">
+            <p class="cart-product-title">{{ product.title }}</p>
+            <p class="cart-product-price">€{{ product.price }} EUR</p>
+            <button type="button" (click)="removeFromCart(product)" class="cart-product-button">Remove</button>
+        </div>
+    }
+
+}
+@else {
+    <p class="title">Le panier est vide.</p>
+}

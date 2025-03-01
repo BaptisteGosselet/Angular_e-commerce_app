@@ -3,7 +3,8 @@ import { HeaderLink } from "../../models/header-link.model";
 
 Injectable()
 export class HeaderStore {
-    #links = signal<HeaderLink[]>([
+
+    #catalogLinks = signal<HeaderLink[]>([
         {
             name: 'Collection',
             url: '/catalog'
@@ -26,7 +27,15 @@ export class HeaderStore {
         }
 
     ]);  
+
+    #userLinks = signal<HeaderLink[]>([
+        {
+            name: 'Panier',
+            url: '/cart'
+        }
+    ]);
     
-    readonly links = this.#links.asReadonly;
+    readonly catalogLinks = this.#catalogLinks.asReadonly;
+    readonly userLinks = this.#userLinks.asReadonly;
 
 }

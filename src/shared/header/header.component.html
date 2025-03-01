@@ -2,7 +2,7 @@
     <app-headband class="header-headband"/>
     <div class="header-main">
         <div class="header-main-left">
-            @for (link of links(); track $index) {
+            @for (link of catalogLinks(); track $index) {
                 <a class="header-link" [href]="link.url">{{ link.name }}</a>
             }
         </div>
@@ -12,7 +12,9 @@
             </a>
         </div>
         <div class="header-main-right">
-            <span>Partie droite</span>
+            @for (link of userLinks(); track $index) {
+                <a class="header-link" [href]="link.url">{{ link.name }}</a>
+            }
         </div>
     </div>
 </div>
