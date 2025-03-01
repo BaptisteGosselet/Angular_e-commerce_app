@@ -1,18 +1,33 @@
 @if(product()){
     <div class="product-details">
+
         <div class="product-details-image">
             <img [src]="product()!.image" alt="product image" />
         </div>
+
         <div class="product-details-info">
             <p class="product-details-info-title">{{ product()!.title }}</p>
             <p class="product-details-info-price">€{{ product()!.price }} EUR</p>
+
+            <select name="size" id="size-select" class="product-details-info-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              
+            <button type="button" (click)="addToCart()" class="product-details-info-button">Add to cart</button>
+            
+            <p>DESCRIPTION</p>
+
             <p class="product-details-info-description">{{ product()!.description }}</p>
-            <button type="button" (click)="addToCart()" class="product-details-info-add-to-cart">Add to cart</button>
         </div>
+
     </div>
+
 }
 @else {
-    <div class="product-details">
+    <div class="product-null">
         <p>Cet article est indisponible.</p>
     </div>
 }

@@ -1,8 +1,10 @@
 .header{
     
-    &-headband{
-        margin-bottom: 2em;
-    }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding-bottom: 2em;
 
     &-main{
         height: 5em;
