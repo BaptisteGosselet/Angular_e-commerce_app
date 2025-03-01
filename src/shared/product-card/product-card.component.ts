@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -8,10 +9,12 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-card.component.scss'
 })
 export class ProductCardComponent {
+  #router = inject(Router);
+
   readonly product = input.required<Product>();
 
-  goToProductDetails() {
-    console.log(this.product().id);
+  goToProductDetails(id: number) {
+    this.#router.navigate([`/product/${id}`]);
     
   }
 

@@ -3,14 +3,16 @@
     <div class="header-main">
         <div class="header-main-left">
             @for (link of links(); track $index) {
-                <a [href]="link.url">{{ link.name }}</a>
+                <a class="header-link" [href]="link.url">{{ link.name }}</a>
             }
         </div>
         <div class="header-main-middle">
-            <span></span>
+            <a href="" class="header-main-middle-link">
+                <img class="header-main-middle-logo" src="assets/logo.svg" alt="Logo"/>
+            </a>
         </div>
         <div class="header-main-right">
-            <span></span>
+            <span>Partie droite</span>
         </div>
     </div>
 </div>

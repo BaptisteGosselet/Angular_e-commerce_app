@@ -15,11 +15,8 @@ export class CatalogComponent {
 
   products = this.#catalogStore.products();
   constructor(private route: ActivatedRoute) {
-    this.route.paramMap.subscribe(params => {
-      const category = params.get('category');
+      const category = this.route.snapshot.paramMap.get('category');
       this.#catalogStore.init(category);
-    });
-
   }
 }
 
