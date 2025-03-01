@@ -1,0 +1,8 @@
+<div class="cart-dialog">
+    <p>{{ product().title }} a été ajouté au panier !</p>
+    <p>Souhaitez-vous vous rendre au panier ou poursuivre vos achats ?</p>
+    <div class="cart-dialog-actions">
+        <button type="button" class="cart-dialog-actions-continue" (click)="onNoClick()">Continuer mes achats</button>
+        <button type="button" class="cart-dialog-actions-cart" (click)="onConfirmClick()">Aller au panier</button>
+</div>
+

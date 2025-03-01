@@ -11,17 +11,13 @@ export class CartService {
       return this.#readCart();
     }
 
-    addToCart(product: Product): void {
-      console.log('add', product.title);
-      
+    addToCart(product: Product): void {      
       const cart = this.#readCart();
       cart.addProduct(product);
       this.#writeCart(cart);
     }
     
     removeFromCart(product: Product): void {
-      console.log('rem', product.title);
-
       const cart = this.#readCart();
       cart.removeProduct(product);
       this.#writeCart(cart);

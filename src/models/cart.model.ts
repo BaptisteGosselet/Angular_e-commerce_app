@@ -12,8 +12,12 @@ export class Cart{
         this.products.push(product);
     }
 
-    removeProduct(product: Product){
-        this.products = this.products.filter(p => p.id !== product.id);
+    removeProduct(product: Product): void {
+        const index = this.products.findIndex(p => p.id === product.id);
+        if (index !== -1) {
+            this.products.splice(index, 1);
+        }
     }
+    
 
 }

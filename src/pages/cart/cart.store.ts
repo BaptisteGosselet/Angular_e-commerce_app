@@ -15,9 +15,7 @@ export class CartStore {
     }
 
     refreshCart() {
-        this.#cart.set(this.#cartService.getCart());
-        console.log('cart', this.#cart());
-        
+        this.#cart.set(this.#cartService.getCart());        
     }
 
     removeFromCart(product: Product) {
@@ -25,7 +23,7 @@ export class CartStore {
         this.refreshCart();
     }
 
-    clearCart() {
+    checkout() {
         this.#cartService.clearCart();
         this.refreshCart();
     }

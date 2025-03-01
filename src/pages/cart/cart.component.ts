@@ -23,4 +23,8 @@ export class CartComponent {
     this.#cartStore.removeFromCart(product);
   }
 
+  checkout() {
+    this.#cartStore.checkout();
+  }
+
 }

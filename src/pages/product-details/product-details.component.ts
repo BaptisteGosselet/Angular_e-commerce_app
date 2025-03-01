@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailsStore } from './product-details.store';
+import { ProductDetailsCartDialogComponent } from './product-details-cart-dialog/product-details-cart-dialog.component';
 
 @Component({
   selector: 'app-product-details',
@@ -10,6 +12,8 @@ import { ProductDetailsStore } from './product-details.store';
 })
 export class ProductDetailsComponent {
   #productDetailsStore: ProductDetailsStore = inject(ProductDetailsStore);
+  #dialog = inject(MatDialog);
+  #router = inject(Router);
 
   product = this.#productDetailsStore.product();
 
@@ -23,6 +27,20 @@ export class ProductDetailsComponent {
 
   addToCart() {
     this.#productDetailsStore.addToCart();
+    this.#openDialog();
+  }
+
+  #openDialog() {
+    const dialogRef = this.#dialog.open(ProductDetailsCartDialogComponent, {
+        data: { product: this.product }
+      });
+
+    dialogRef.afterClosed().subscribe((goToCart:boolean) => {
+      if(goToCart){
+        this.#router.navigate(['/cart']);
+      }
+      }
+    );
   }
 
 }

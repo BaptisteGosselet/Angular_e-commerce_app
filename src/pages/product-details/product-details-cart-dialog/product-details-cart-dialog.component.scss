@@ -1,0 +1,32 @@
+.cart-dialog{
+
+    margin: 2em;
+
+    &-actions{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        width: 100%;
+
+        &-continue, &-cart{
+            width: 100%;
+            padding: 1em;
+            margin: 1em;
+            cursor: pointer;
+        }
+        
+        &-continue{
+            background-color: white;
+            border: 0.15em solid black;
+            
+        }
+        
+        &-cart{
+            color: white;
+            background-color: #5433EB;
+            border: 0;
+        }
+
+    }
+
+}
