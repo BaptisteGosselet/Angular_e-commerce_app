@@ -1,0 +1,16 @@
+<div class="header">
+    <app-headband class="header-headband"/>
+    <div class="header-main">
+        <div class="header-main-left">
+            @for (link of links(); track $index) {
+                <a [href]="link.url">{{ link.name }}</a>
+            }
+        </div>
+        <div class="header-main-middle">
+            <span></span>
+        </div>
+        <div class="header-main-right">
+            <span></span>
+        </div>
+    </div>
+</div>

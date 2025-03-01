@@ -10,16 +10,18 @@ export class HomeStore {
     readonly products = this.#products.asReadonly;
 
     init() {
-        console.log('HomeStore initialized');
-        this.#getProducts();
+        this.#getTopProducts();
     }
 
-    #getProducts() {
+    #getTopProducts() {
         this.#productService.getProducts().subscribe((products) => {
-            this.#products.set(products);
+            let m = products.length;
+              while (m) {
+              const i = Math.floor(Math.random() * m--);
+              [products[m], products[i]] = [products[i], products[m]];
+            }
+            this.#products.set(products.slice(0, 4));
         });
     }
-
-
     
 }

@@ -1,0 +1,11 @@
+<div class="catalog">
+    <div class="catalog-product-list">
+        @for (product of products(); track product.id) {
+            <div class="catalog-product-list-card">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        }
+    </div>
+</div>
+
+

@@ -1,0 +1,57 @@
+.header{
+    background-color: red;  
+    
+    &-headband{
+        margin-bottom: 2em;
+    }
+
+    &-main{
+        height: 5em;
+        width: 100%;
+        display: flex;
+        
+        &-left{
+            height: 100%;
+            width: 33%;
+            
+            display: flex;
+            justify-content: space-around;
+            align-items: end;
+            background-color: blue;
+
+        }
+
+    }
+
+    a {
+        background-color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 3px;
+      }
+      
+      a:before{
+        content: '';
+        background: black;
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 1.5px;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      a:hover {
+       background-position: 0;
+      }
+      
+      a:hover::before{
+        width: 100%;
+      }   
+}
